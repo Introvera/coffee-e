@@ -1,0 +1,537 @@
+import { Branch, Product, BranchProduct } from './types';
+
+export const branches: Branch[] = [
+  {
+    id: 'sydney-cbd',
+    name: 'Sydney CBD',
+    area: 'Sydney',
+    address: '123 George Street, Sydney NSW 2000',
+    hours: {
+      open: '06:30',
+      close: '18:00',
+      days: 'Mon-Sun',
+    },
+    isOpen: true,
+    offers: [
+      {
+        id: 'offer-1',
+        title: 'Australia Day Special',
+        description: 'Get 26% off all Australian single-origin coffees',
+        code: 'AUSSIE26',
+        image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80',
+        discount: 26,
+        validUntil: '2026-01-31',
+      },
+      {
+        id: 'offer-1b',
+        title: 'Morning Rush',
+        description: '15% off any espresso before 9am',
+        code: 'MORNING15',
+        image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80',
+        discount: 15,
+        validUntil: '2026-03-31',
+      },
+    ],
+    deliveryLinks: {
+      uberEats: 'https://ubereats.com/store/coffissimo-sydney',
+      doorDash: 'https://doordash.com/store/coffissimo-sydney',
+    },
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80',
+    phone: '+61 2 9123 4567',
+  },
+  {
+    id: 'melbourne-central',
+    name: 'Melbourne Central',
+    area: 'Melbourne',
+    address: '45 Flinders Lane, Melbourne VIC 3000',
+    hours: {
+      open: '07:00',
+      close: '19:00',
+      days: 'Mon-Sun',
+    },
+    isOpen: true,
+    offers: [
+      {
+        id: 'offer-2',
+        title: "Valentine's Day Treat",
+        description: 'Share the love - Buy one get one 50% off on all drinks',
+        image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80',
+        discount: 50,
+        validUntil: '2026-02-14',
+      },
+      {
+        id: 'offer-2b',
+        title: 'Latte Art Masterclass',
+        description: 'Free latte art workshop with any bag purchase over $50',
+        image: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=1200&q=80',
+        validUntil: '2026-02-28',
+      },
+    ],
+    deliveryLinks: {
+      uberEats: 'https://ubereats.com/store/coffissimo-melbourne',
+      doorDash: 'https://doordash.com/store/coffissimo-melbourne',
+    },
+    image: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80',
+    phone: '+61 3 9234 5678',
+  },
+  {
+    id: 'brisbane-south',
+    name: 'Brisbane South Bank',
+    area: 'Brisbane',
+    address: '78 Grey Street, South Brisbane QLD 4101',
+    hours: {
+      open: '06:00',
+      close: '20:00',
+      days: 'Mon-Sun',
+    },
+    isOpen: true,
+    offers: [
+      {
+        id: 'offer-3',
+        title: 'Summer Cool Down',
+        description: '20% off all cold brew and iced drinks',
+        code: 'COOLBREW',
+        image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=1200&q=80',
+        discount: 20,
+        validUntil: '2026-03-31',
+      },
+    ],
+    deliveryLinks: {
+      uberEats: 'https://ubereats.com/store/coffissimo-brisbane',
+      doorDash: 'https://doordash.com/store/coffissimo-brisbane',
+    },
+    image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80',
+    phone: '+61 7 3345 6789',
+  },
+  {
+    id: 'perth-city',
+    name: 'Perth City',
+    area: 'Perth',
+    address: '12 St Georges Terrace, Perth WA 6000',
+    hours: {
+      open: '07:30',
+      close: '17:00',
+      days: 'Mon-Sat',
+    },
+    isOpen: false,
+    offers: [
+      {
+        id: 'offer-4',
+        title: 'Weekend Brunch',
+        description: 'Complimentary pastry with any brunch order',
+        image: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=1200&q=80',
+        validUntil: '2026-03-15',
+      },
+    ],
+    deliveryLinks: {
+      uberEats: 'https://ubereats.com/store/coffissimo-perth',
+      doorDash: 'https://doordash.com/store/coffissimo-perth',
+    },
+    image: 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&q=80',
+    phone: '+61 8 9456 7890',
+  },
+];
+
+export const products: Product[] = [
+  // Espresso
+  {
+    id: 'ethiopian-yirgacheffe',
+    name: 'Ethiopian Yirgacheffe',
+    description: 'A bright and complex single-origin espresso with distinctive floral and citrus notes. Sourced from smallholder farmers in the Gedeo zone, this coffee showcases the best of Ethiopian terroir.',
+    category: 'espresso',
+    images: [
+      'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80',
+      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80',
+      'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=800&q=80',
+    ],
+    tastingNotes: ['Bergamot', 'Jasmine', 'Lemon Zest', 'Honey'],
+    origin: 'Yirgacheffe, Ethiopia',
+    roastLevel: 'light',
+    tags: ['single-origin', 'floral', 'citrus', 'bestseller'],
+    grindOptions: ['whole_bean', 'espresso', 'v60', 'aeropress', 'chemex'],
+    weight: '250g',
+    isSubscribable: true,
+  },
+  {
+    id: 'colombian-supremo',
+    name: 'Colombian Supremo',
+    description: 'A balanced and approachable espresso with caramel sweetness and nutty undertones. This classic Colombian coffee is perfect for those who appreciate a smooth, everyday cup.',
+    category: 'espresso',
+    images: [
+      'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=800&q=80',
+      'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80',
+    ],
+    tastingNotes: ['Caramel', 'Hazelnut', 'Dark Chocolate', 'Orange'],
+    origin: 'Huila, Colombia',
+    roastLevel: 'medium',
+    tags: ['single-origin', 'balanced', 'classic'],
+    grindOptions: ['whole_bean', 'espresso', 'french_press', 'moka_pot'],
+    weight: '250g',
+    isSubscribable: true,
+  },
+  {
+    id: 'house-blend-espresso',
+    name: 'House Blend',
+    description: 'Our signature espresso blend, crafted for richness and consistency. A harmonious combination of Brazilian and Guatemalan beans creates a cup with full body and chocolate notes.',
+    category: 'espresso',
+    images: [
+      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80',
+      'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=800&q=80',
+    ],
+    tastingNotes: ['Dark Chocolate', 'Toasted Almond', 'Brown Sugar'],
+    origin: 'Brazil & Guatemala',
+    roastLevel: 'medium-dark',
+    tags: ['blend', 'rich', 'house-favorite'],
+    grindOptions: ['whole_bean', 'espresso', 'french_press', 'moka_pot'],
+    weight: '250g',
+    isSubscribable: true,
+  },
+  {
+    id: 'sumatra-mandheling',
+    name: 'Sumatra Mandheling',
+    description: 'A bold and earthy espresso with low acidity and full body. This Indonesian gem offers complex flavors of dark chocolate, cedar, and a hint of tropical fruit.',
+    category: 'espresso',
+    images: [
+      'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=800&q=80',
+      'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=800&q=80',
+    ],
+    tastingNotes: ['Earthy', 'Cedar', 'Dark Chocolate', 'Tobacco'],
+    origin: 'Sumatra, Indonesia',
+    roastLevel: 'dark',
+    tags: ['single-origin', 'bold', 'low-acidity'],
+    grindOptions: ['whole_bean', 'espresso', 'french_press'],
+    weight: '250g',
+    isSubscribable: true,
+  },
+  // Filter
+  {
+    id: 'kenya-aa',
+    name: 'Kenya AA',
+    description: 'A vibrant filter coffee with wine-like acidity and complex fruit notes. This premium grade Kenyan coffee delivers blackcurrant and tomato characteristics.',
+    category: 'filter',
+    images: [
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80',
+    ],
+    tastingNotes: ['Blackcurrant', 'Tomato', 'Brown Sugar', 'Grapefruit'],
+    origin: 'Nyeri, Kenya',
+    roastLevel: 'light',
+    tags: ['single-origin', 'fruity', 'complex'],
+    grindOptions: ['whole_bean', 'v60', 'chemex', 'aeropress'],
+    weight: '250g',
+    isSubscribable: true,
+  },
+  {
+    id: 'guatemala-antigua',
+    name: 'Guatemala Antigua',
+    description: 'A sophisticated filter coffee grown in volcanic soil. Notes of chocolate, spice, and stone fruit create a complex yet approachable cup.',
+    category: 'filter',
+    images: [
+      'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80',
+      'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80',
+    ],
+    tastingNotes: ['Milk Chocolate', 'Cinnamon', 'Plum', 'Almond'],
+    origin: 'Antigua, Guatemala',
+    roastLevel: 'medium',
+    tags: ['single-origin', 'volcanic', 'balanced'],
+    grindOptions: ['whole_bean', 'v60', 'chemex', 'french_press'],
+    weight: '250g',
+    isSubscribable: true,
+  },
+  // Pods
+  {
+    id: 'classic-espresso-pods',
+    name: 'Classic Espresso Pods',
+    description: 'Our house blend in convenient, compostable pod format. Perfect for those mornings when you need quality coffee without the wait.',
+    category: 'pods',
+    images: [
+      'https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=800&q=80',
+    ],
+    tastingNotes: ['Chocolate', 'Caramel', 'Nuts'],
+    origin: 'Brazil & Colombia',
+    roastLevel: 'medium',
+    tags: ['convenient', 'compostable', 'eco-friendly'],
+    grindOptions: [],
+    weight: '10 pods',
+    isSubscribable: true,
+  },
+  {
+    id: 'decaf-pods',
+    name: 'Decaf Pods',
+    description: 'All the flavor, none of the caffeine. Swiss water processed for a clean, chemical-free decaffeination.',
+    category: 'pods',
+    images: [
+      'https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=800&q=80',
+    ],
+    tastingNotes: ['Chocolate', 'Hazelnut', 'Caramel'],
+    origin: 'Colombia',
+    roastLevel: 'medium',
+    tags: ['decaf', 'swiss-water', 'compostable'],
+    grindOptions: [],
+    weight: '10 pods',
+    isSubscribable: true,
+  },
+  // Matcha
+  {
+    id: 'ceremonial-matcha',
+    name: 'Ceremonial Grade Matcha',
+    description: 'Premium stone-ground matcha from Uji, Japan. Vibrant green color with a smooth, umami-rich flavor perfect for traditional preparation.',
+    category: 'matcha',
+    images: [
+      'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=800&q=80',
+    ],
+    tastingNotes: ['Umami', 'Vegetal', 'Sweet', 'Creamy'],
+    origin: 'Uji, Japan',
+    roastLevel: 'light',
+    tags: ['ceremonial', 'premium', 'japanese'],
+    grindOptions: [],
+    weight: '30g',
+    isSubscribable: true,
+  },
+  {
+    id: 'culinary-matcha',
+    name: 'Culinary Matcha',
+    description: 'Versatile matcha perfect for lattes, smoothies, and baking. A slightly more robust flavor that stands up well to milk and sweeteners.',
+    category: 'matcha',
+    images: [
+      'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=800&q=80',
+    ],
+    tastingNotes: ['Grassy', 'Slightly Bitter', 'Vegetal'],
+    origin: 'Kagoshima, Japan',
+    roastLevel: 'medium',
+    tags: ['culinary', 'latte', 'baking'],
+    grindOptions: [],
+    weight: '100g',
+    isSubscribable: true,
+  },
+  // Gifts
+  {
+    id: 'coffee-lovers-set',
+    name: 'Coffee Lover\'s Gift Set',
+    description: 'A curated selection of our finest coffees. Includes three 100g bags of our most popular single origins, plus a tasting notes guide.',
+    category: 'gifts',
+    images: [
+      'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=800&q=80',
+    ],
+    tastingNotes: [],
+    origin: 'Various',
+    roastLevel: 'medium',
+    tags: ['gift', 'sampler', 'bestseller'],
+    grindOptions: ['whole_bean', 'espresso', 'v60'],
+    weight: '3 x 100g',
+    isSubscribable: false,
+  },
+  {
+    id: 'brewing-starter-kit',
+    name: 'Brewing Starter Kit',
+    description: 'Everything you need to start your home brewing journey. Includes a V60 dripper, filters, gooseneck kettle, and 250g of our house filter blend.',
+    category: 'gifts',
+    images: [
+      'https://images.unsplash.com/photo-1572119865084-43c285814d63?w=800&q=80',
+    ],
+    tastingNotes: [],
+    origin: 'Various',
+    roastLevel: 'medium',
+    tags: ['gift', 'starter', 'equipment'],
+    grindOptions: [],
+    weight: 'Set',
+    isSubscribable: false,
+  },
+  // Equipment
+  {
+    id: 'fellow-stagg-kettle',
+    name: 'Fellow Stagg Kettle',
+    description: 'Precision pour-over kettle with built-in thermometer. The counterbalanced handle and tapered spout give you complete control over your pour.',
+    category: 'equipment',
+    images: [
+      'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80',
+    ],
+    tastingNotes: [],
+    origin: '',
+    roastLevel: 'medium',
+    tags: ['equipment', 'kettle', 'pour-over'],
+    grindOptions: [],
+    weight: '0.9L',
+    isSubscribable: false,
+  },
+  // Merchandise
+  {
+    id: 'ceramic-mug',
+    name: 'Artisan Ceramic Mug',
+    description: 'Handcrafted ceramic mug with our signature logo. Each piece is unique with subtle variations in the glaze.',
+    category: 'merchandise',
+    images: [
+      'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80',
+    ],
+    tastingNotes: [],
+    origin: '',
+    roastLevel: 'medium',
+    tags: ['merchandise', 'mug', 'handmade'],
+    grindOptions: [],
+    weight: '350ml',
+    isSubscribable: false,
+  },
+];
+
+export const branchProducts: BranchProduct[] = [
+  // Sydney CBD
+  { branchId: 'sydney-cbd', productId: 'ethiopian-yirgacheffe', price: 22.50, availability: 'in_stock', featured: true },
+  { branchId: 'sydney-cbd', productId: 'colombian-supremo', price: 19.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'house-blend-espresso', price: 17.50, availability: 'in_stock', featured: true },
+  { branchId: 'sydney-cbd', productId: 'sumatra-mandheling', price: 21.50, availability: 'low_stock' },
+  { branchId: 'sydney-cbd', productId: 'kenya-aa', price: 24.00, availability: 'in_stock', featured: true },
+  { branchId: 'sydney-cbd', productId: 'guatemala-antigua', price: 20.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'classic-espresso-pods', price: 12.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'decaf-pods', price: 12.50, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'ceremonial-matcha', price: 38.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'culinary-matcha', price: 28.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'coffee-lovers-set', price: 49.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'brewing-starter-kit', price: 115.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'fellow-stagg-kettle', price: 195.00, availability: 'in_stock' },
+  { branchId: 'sydney-cbd', productId: 'ceramic-mug', price: 32.00, availability: 'in_stock' },
+
+  // Melbourne Central - coffee capital, premium prices
+  { branchId: 'melbourne-central', productId: 'ethiopian-yirgacheffe', price: 24.50, availability: 'in_stock', featured: true },
+  { branchId: 'melbourne-central', productId: 'colombian-supremo', price: 20.00, availability: 'out_of_stock' },
+  { branchId: 'melbourne-central', productId: 'house-blend-espresso', price: 18.50, availability: 'in_stock', featured: true },
+  { branchId: 'melbourne-central', productId: 'sumatra-mandheling', price: 22.50, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'kenya-aa', price: 26.00, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'guatemala-antigua', price: 21.00, availability: 'in_stock', featured: true },
+  { branchId: 'melbourne-central', productId: 'classic-espresso-pods', price: 12.50, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'decaf-pods', price: 13.00, availability: 'low_stock' },
+  { branchId: 'melbourne-central', productId: 'ceremonial-matcha', price: 42.00, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'culinary-matcha', price: 32.00, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'coffee-lovers-set', price: 52.00, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'brewing-starter-kit', price: 119.00, availability: 'out_of_stock' },
+  { branchId: 'melbourne-central', productId: 'fellow-stagg-kettle', price: 199.00, availability: 'in_stock' },
+  { branchId: 'melbourne-central', productId: 'ceramic-mug', price: 34.00, availability: 'in_stock' },
+
+  // Brisbane South Bank
+  { branchId: 'brisbane-south', productId: 'ethiopian-yirgacheffe', price: 21.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'colombian-supremo', price: 18.50, availability: 'in_stock', featured: true },
+  { branchId: 'brisbane-south', productId: 'house-blend-espresso', price: 16.00, availability: 'in_stock', featured: true },
+  { branchId: 'brisbane-south', productId: 'sumatra-mandheling', price: 20.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'kenya-aa', price: 23.50, availability: 'low_stock', featured: true },
+  { branchId: 'brisbane-south', productId: 'guatemala-antigua', price: 19.50, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'classic-espresso-pods', price: 11.50, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'decaf-pods', price: 12.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'ceremonial-matcha', price: 36.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'culinary-matcha', price: 26.00, availability: 'out_of_stock' },
+  { branchId: 'brisbane-south', productId: 'coffee-lovers-set', price: 46.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'brewing-starter-kit', price: 110.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'fellow-stagg-kettle', price: 189.00, availability: 'in_stock' },
+  { branchId: 'brisbane-south', productId: 'ceramic-mug', price: 29.00, availability: 'low_stock' },
+
+  // Perth City
+  { branchId: 'perth-city', productId: 'ethiopian-yirgacheffe', price: 25.00, availability: 'in_stock', featured: true },
+  { branchId: 'perth-city', productId: 'colombian-supremo', price: 21.50, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'house-blend-espresso', price: 19.00, availability: 'in_stock', featured: true },
+  { branchId: 'perth-city', productId: 'sumatra-mandheling', price: 23.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'kenya-aa', price: 27.50, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'guatemala-antigua', price: 22.50, availability: 'in_stock', featured: true },
+  { branchId: 'perth-city', productId: 'classic-espresso-pods', price: 13.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'decaf-pods', price: 13.50, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'ceremonial-matcha', price: 44.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'culinary-matcha', price: 34.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'coffee-lovers-set', price: 55.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'brewing-starter-kit', price: 125.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'fellow-stagg-kettle', price: 210.00, availability: 'in_stock' },
+  { branchId: 'perth-city', productId: 'ceramic-mug', price: 38.00, availability: 'in_stock' },
+];
+
+export const categories = [
+  { id: 'espresso', name: 'Espresso', description: 'Bold and rich coffees perfect for espresso' },
+  { id: 'filter', name: 'Filter', description: 'Bright and complex coffees for pour-over' },
+  { id: 'pods', name: 'Pods', description: 'Convenient compostable coffee pods' },
+  { id: 'matcha', name: 'Matcha', description: 'Premium Japanese green tea powder' },
+  { id: 'gifts', name: 'Gifts', description: 'Curated sets for coffee lovers' },
+  { id: 'equipment', name: 'Equipment', description: 'Tools for the perfect brew' },
+  { id: 'merchandise', name: 'Merch', description: 'Show your coffee love' },
+] as const;
+
+export const grindOptions = [
+  { id: 'whole_bean', name: 'Whole Bean', description: 'Grind fresh at home' },
+  { id: 'espresso', name: 'Espresso', description: 'Fine grind for espresso machines' },
+  { id: 'french_press', name: 'French Press', description: 'Coarse grind' },
+  { id: 'v60', name: 'V60', description: 'Medium-fine grind' },
+  { id: 'aeropress', name: 'AeroPress', description: 'Medium grind' },
+  { id: 'moka_pot', name: 'Moka Pot', description: 'Fine-medium grind' },
+  { id: 'chemex', name: 'Chemex', description: 'Medium-coarse grind' },
+] as const;
+
+export const subscriptionFrequencies = [
+  { id: 'weekly', name: 'Weekly', discount: 15 },
+  { id: 'biweekly', name: 'Every 2 weeks', discount: 12 },
+  { id: 'monthly', name: 'Monthly', discount: 10 },
+] as const;
+
+export const faqs = [
+  {
+    category: 'Orders & Shipping',
+    questions: [
+      {
+        question: 'How long does shipping take?',
+        answer: 'We ship all orders within 1-2 business days. Standard delivery takes 3-5 business days, and express delivery takes 1-2 business days.',
+      },
+      {
+        question: 'Do you ship internationally?',
+        answer: 'Currently, we only ship within the UK. We are working on expanding our delivery to Europe and beyond.',
+      },
+      {
+        question: 'Can I change or cancel my order?',
+        answer: 'You can modify or cancel your order within 1 hour of placing it. After that, please contact our support team.',
+      },
+    ],
+  },
+  {
+    category: 'Products',
+    questions: [
+      {
+        question: 'How should I store my coffee?',
+        answer: 'Store your coffee in a cool, dark place in an airtight container. Avoid the refrigerator as moisture can affect the beans. For best results, use within 4 weeks of the roast date.',
+      },
+      {
+        question: 'What grind should I choose?',
+        answer: 'Choose based on your brewing method: Whole bean for fresh grinding, Espresso for espresso machines, French Press for coarse, V60/Chemex for pour-over, and AeroPress for a medium grind.',
+      },
+      {
+        question: 'Are your pods compostable?',
+        answer: 'Yes! All our coffee pods are made from plant-based materials and are fully compostable in home composting systems within 26 weeks.',
+      },
+    ],
+  },
+  {
+    category: 'Subscriptions',
+    questions: [
+      {
+        question: 'How do subscriptions work?',
+        answer: 'Choose your coffee, grind, and delivery frequency. We will automatically ship your coffee on your chosen schedule. You can pause, skip, or cancel anytime.',
+      },
+      {
+        question: 'Can I pause my subscription?',
+        answer: 'Yes, you can pause your subscription for up to 3 months at any time from your account dashboard.',
+      },
+      {
+        question: 'What savings do I get with a subscription?',
+        answer: 'Subscribe & Save offers 10-15% off depending on your delivery frequency: 15% for weekly, 12% for bi-weekly, and 10% for monthly.',
+      },
+    ],
+  },
+  {
+    category: 'Pickup',
+    questions: [
+      {
+        question: 'How does pickup work?',
+        answer: 'Place your order online and select your preferred branch. You will receive a notification when your order is ready. Show your order confirmation at the counter.',
+      },
+      {
+        question: 'Can I schedule a pickup time?',
+        answer: 'Yes, during checkout you can select a preferred pickup time. We will have your order ready at that time.',
+      },
+      {
+        question: 'What if my branch is closed?',
+        answer: 'If your selected branch is closed, you will need to choose a different branch or wait until it reopens. We will notify you of any unexpected closures.',
+      },
+    ],
+  },
+];
