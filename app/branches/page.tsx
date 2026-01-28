@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 export default function BranchesPage() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
-  const { selectedBranch, setSelectedBranch, setShowEntryModal } = useStore();
+  const { selectedBranch, setSelectedBranch, setOrderType } = useStore();
 
   const filteredBranches = branches.filter(
     (branch) =>
@@ -24,7 +24,7 @@ export default function BranchesPage() {
 
   const handleSelectBranch = (branch: typeof branches[0]) => {
     setSelectedBranch(branch);
-    setShowEntryModal(false);
+    setOrderType("pickup");
     router.push("/");
   };
 

@@ -26,7 +26,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   
-  const { selectedBranch, orderType, setIsCartOpen, cart, setShowEntryModal, setSelectedBranch, setOrderType, clearCart } = useStore();
+  const { selectedBranch, orderType, setIsCartOpen, cart, setSelectedBranch, setOrderType, clearCart } = useStore();
   const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
 
   // Check if current page has a dark hero

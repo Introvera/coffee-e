@@ -5,7 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BranchBanner } from "@/components/layout/BranchBanner";
 import { CartSheet } from "@/components/cart/CartSheet";
-import { EntryModal } from "@/components/entry/EntryModal";
 import { CelebrationEffects } from "@/components/effects/CelebrationEffects";
 
 const inter = Inter({
@@ -42,7 +41,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <CartSheet />
-        <EntryModal />
       </body>
     </html>
   );
